@@ -76,7 +76,7 @@
           })
           let Upgrade = document.querySelector(".upgrade");
           Upgrade.addEventListener("click", () => {
-            btnStyle()
+            btnStyle();
             if (e.target.classList.contains("edit")) {
               e.target.innerHTML = `${inputAddItem.value} <i class="fa fa-remove text-danger float-right mt-1"></i>`;
               e.target.classList.remove("edit");
@@ -84,6 +84,7 @@
             setTimeout(() => {
               inputAddItem.value = "";
             }, 100);
+            storageItems();
           });
         }
 
