@@ -9,6 +9,12 @@
 
   myBody.addEventListener("DOMContentLoaded", storageCheck());
   addItem.addEventListener("click", addItems);
+  inputAddItem.addEventListener('keydown' , (e)=>{
+    if(e.key == 'Enter') {
+      addItem.click();
+    }
+  })
+  
 
   function addItems() {
     if (inputAddItem.value == "") {
@@ -64,6 +70,7 @@
           el.classList.remove("edit");
         });
         if (e.target.nodeName == "P") {
+          inputAddItem.focus();
           addItem.innerHTML = `<i class="fa fa-pencil"></i>  Update Item`;
           addItem.classList.replace("btn-dark", "btn-success");
           addItem.classList.add("upgrade");
